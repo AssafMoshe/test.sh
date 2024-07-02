@@ -1,5 +1,22 @@
-name:Job1
-  echo "Hello"
-  echo aws --version
-  echo sha
+name: First-action
+  on:  
+    push:
+      branches:
+      - main
+      
+  jobs:
+    job1:
+      runs-on: ubuntu-latest
+      steps:
+        - name: print hello msg
+          run: echo "Hello"
+          
+        - name: print version Ubuntu
+          run: 
+            VER=$(cat VERSION)
+            echo "VERSION=$VER" >> $GITHUB_ENV
+
+          
   
+      
+       
