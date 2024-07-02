@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v2
       
       - name: Print commit SHA
-        run: echo "Commit SHA: ${{ github.sha }}"
+        run: echo "Commit SHA:${{ github.sha }}"
           
   
       
