@@ -26,6 +26,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
+    - name: Set execute permissions
+      run: chmod +x path/to/your/script.sh
+      
     - name: Check out repository
       uses: actions/checkout@v2
 
