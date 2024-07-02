@@ -1,20 +1,20 @@
 name: First-action
-  on:  
-    push:
-      branches:
-      - main
+on:  
+  push:
+    branches:
+    - main
       
-  jobs:
-    job1:
-      runs-on: ubuntu-latest
-      steps:
-        - name: print hello msg
-          run: echo "Hello"
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print hello msg
+        run: echo "Hello"
           
-        - name: print version Ubuntu
-          run: 
-            VER=$(cat VERSION)
-            echo "VERSION=$VER" >> $GITHUB_ENV
+      - name: print version Ubuntu
+        run: 
+          VER=$(cat VERSION)
+          echo "VERSION=$VER" >> $GITHUB_ENV
 
           
   
