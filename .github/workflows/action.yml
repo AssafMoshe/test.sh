@@ -21,7 +21,33 @@ jobs:
       
       - name: Print commit SHA
         run: echo "Commit SHA:${{ github.sha }}"
-          
+        
+  job2:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v2
+
+    - name: List files
+      run: |
+        echo "Listing all files in the repository:"
+        find .
+        
+    - name: Run File test.sh
+      run: ./test.sh  
   
-      
+  job3:
+    runs-on: ubuntu-latest 
        
+    steps:
+    - name: First Name
+      run: |
+        if [ -f .env ]; then
+          export $(cat .env | xargs)
+        fi
+      shell: bash
+
+    - name: Print first name
+      run: echo "First name:$FIRST_NAME"
+      shell: bash
