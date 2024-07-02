@@ -47,7 +47,16 @@ jobs:
           export $(cat .env | xargs)
         fi
       shell: bash
-
+    
     - name: Print first name
       run: echo "First name:$FIRST_NAME"
       shell: bash
+
+    - name: Last Name
+      uses: actions/checkout@v2
+
+    - name: Set local variable for last name
+      run: echo "LAST_NAME=Doe" >> $GITHUB_ENV
+
+    - name: Print last name
+      run: echo "Last name:$LAST_NAME"
