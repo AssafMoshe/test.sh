@@ -12,9 +12,9 @@ jobs:
         run: echo "Hello"
           
       - name: print version Ubuntu
-        run: 
-          VER=$(cat VERSION)
-          echo VER
+        run: |
+          echo "Ubuntu version:"
+          lsb_release -a
 
           
   
